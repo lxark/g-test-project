@@ -13,4 +13,4 @@ users_index:
   param: { module: users, action: index }
   class: sfRequestRoute
   requirements:
-    sf_method: [POST]
+    sf_method: [GET]
