@@ -1,0 +1,4 @@
+sfGuardUser:
+  columns:
+    facebook_id:   { type: string(255), notnull: false }
+    twitter_id:    { type: string(255), notnull: false }
