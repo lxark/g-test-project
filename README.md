@@ -33,7 +33,7 @@ php symfony plugin:install sfDoctrineGuardPlugin
 4. Insert users test data
 
 ```
-php symfony doctrine:build --all --and-reload
+php symfony doctrine:build --all --and-load
 ```
 
 5. Install assets
