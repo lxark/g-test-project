@@ -16,4 +16,22 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     {
         return Doctrine_Core::getTable('sfGuardUser');
     }
+
+    /**
+     * Retrieves an admin by email_address and is_active flag and password.
+     *
+     * @param string $email
+     *
+     * @return sfGuardUser
+     */
+    public function findOneAdminByEmail($email)
+    {
+        $query = $this->createQuery('u')
+            ->leftJoin('u.Groups g on g.name = ?', sfGuardGroupTable::NAME_ADMINS)
+            ->where('u.email_address = ?', $email)
+            ->addWhere('u.is_active = ?', true)
+        ;
+
+        return $query->fetchOne();
+    }
 }

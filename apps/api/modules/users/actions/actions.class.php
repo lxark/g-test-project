@@ -17,10 +17,17 @@ class usersActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->getResponse()->setContentType('application/json');
+    sfConfig::set('sf_web_debug', false);
 
-    $users = sfGuardUserTable::getInstance()->findAll();
+    if ('TOKEN' === $request->getParameter('token'))
+    {
+        $this->getResponse()->setContentType('application/json');
 
-    return $this->renderText(json_encode($users->toArray()));
+        $users = sfGuardUserTable::getInstance()->findAll();
+
+        return $this->renderText(json_encode($users->toArray()));
+    }
+
+      return $this->renderText('Invalid token');
   }
 }
