@@ -9,5 +9,9 @@ class ProjectConfiguration extends sfProjectConfiguration
   {
     $this->enablePlugins('sfDoctrinePlugin');
     $this->enablePlugins('sfDoctrineGuardPlugin');
+
+    // Events
+    $dispatcher = $this->getEventDispatcher();
+    $dispatcher->connect('user.created', array('UserListener', 'sendRegistrationEmail'));
   }
 }
