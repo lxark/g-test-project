@@ -30,7 +30,7 @@ vi config/databases.yml
 php symfony plugin:install sfDoctrineGuardPlugin
 ```
 
-4. Insert users test data
+4. Build model and insert users test data
 
 ```
 php symfony doctrine:build --all --and-load
@@ -49,4 +49,12 @@ php symfony plugin:publish-assets
 
 ```
 vi /etc/hosts
+```
+
+8. Configure mailers
+
+
+```
+vi /apps/frontend/config/factories.yml
+vi /apps/backend/config/factories.yml
 ```
