@@ -1,7 +1,7 @@
 <h1>Registration</h1>
 
 <?php if ($sf_user->getFlash('notice')): ?>
-    <p class="text-success"><?php $sf_user->getFlash('notice') ?></p>
+    <p class="text-success"><?php echo $sf_user->getFlash('notice') ?></p>
 <?php elseif ($form->hasErrors()): ?>
     <p class="text-danger">An error occured</p>
 <?php endif; ?>

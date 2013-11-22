@@ -36,7 +36,10 @@ class gUserRegistrationForm extends BasesfGuardUserAdminForm
           'required'   => true,
           'min_length' => 8,
           'pattern'    => '/(.)*[0-9](.)*[0-9](.)*/i'
+      ), array(
+      'min_length' => 'Password is too short (%min_length% characters min).'
       ));
+
       $this->validatorSchema['password_again'] = clone $this->validatorSchema['password'];
   }
 }
