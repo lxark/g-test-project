@@ -27,9 +27,10 @@ class sfGuardUserTable extends PluginsfGuardUserTable
     public function findOneAdminByEmail($email)
     {
         $query = $this->createQuery('u')
-            ->leftJoin('u.Groups g on g.name = ?', sfGuardGroupTable::NAME_ADMINS)
+            ->leftJoin('u.Groups g')
             ->where('u.email_address = ?', $email)
-            ->addWhere('u.is_active = ?', true)
+            ->andWhere('u.is_active = ?', true)
+            ->andWhere('g.name= ?', sfGuardGroupTable::NAME_ADMINS)
         ;
 
         return $query->fetchOne();
