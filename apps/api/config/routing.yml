@@ -4,11 +4,13 @@
 authentication_request:
   url:   /authentication
   param: { module: authentication, action: request }
+  class: sfRequestRoute
   requirements:
     sf_method: [POST]
 
 users_index:
   url:   /users
   param: { module: users, action: index }
+  class: sfRequestRoute
   requirements:
     sf_method: [POST]
