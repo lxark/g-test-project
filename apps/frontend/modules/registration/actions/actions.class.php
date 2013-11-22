@@ -18,5 +18,22 @@ class registrationActions extends sfActions
   public function executeForm(sfWebRequest $request)
   {
     $this->form = new gUserRegistrationForm();
+
+    // Handle form
+    if ($request->isMethod(sfWebRequest::POST))
+    {
+        // Bind form
+        $this->form->bind($request->getParameter($this->form->getName()));
+        if ($this->form->isValid())
+        {
+            // Save and notifies event that send email
+            $user = $this->form->save();
+            $this->dispatcher->notify(new sfEvent($this, 'user.created', array('user' => $user)));
+
+            // Redirect
+            $this->getUser()->setFlash('notice', 'User was successfully registered!');
+            $this->redirect('registration_form');
+        }
+    }
   }
 }

@@ -1,16 +1,12 @@
 # You can find more information about this file on the symfony website:
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
+
+registration_form:
+  url:   /registration
+  param: { module: registration, action: form }
+
 # default rules
 homepage:
   url:   /
   param: { module: registration, action: form }
-
-# generic rules
-# please, remove them by adding more specific rules
-default_index:
-  url:   /:module
-  param: { action: index }
-
-default:
-  url:   /:module/:action/*
