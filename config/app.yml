@@ -1,2 +1,4 @@
 all:
-  sf_guard_plugin_signin_form: gGuardFormSignin
+  sf_guard_plugin:
+    routes_register: false
+    signin_form: gGuardFormSignin
