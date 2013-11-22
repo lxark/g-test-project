@@ -2,7 +2,7 @@ sfGuardUser:
   User_super:
     first_name:     John
     last_name:      Doe
-    email_address:  john.doe@g.com
+    email_address:  super@g.com
     username:       super
     password:       super
     is_super_admin: true
@@ -10,7 +10,7 @@ sfGuardUser:
   User_admin:
     first_name:     Josh
     last_name:      Doe
-    email_address:  josh.doe@g.com
+    email_address:  admin@g.com
     username:       admin
     password:       admin
     is_super_admin: false
@@ -18,11 +18,10 @@ sfGuardUser:
   User_lambda:
     first_name:     Lamb
     last_name:      Da
-    email_address:  lamb.da@g.com
+    email_address:  lambda@g.com
     username:       lambda
     password:       lambda
     is_super_admin: false
-    Groups:         [Group_user]
 
 sfGuardGroup:
   Group_admin:
