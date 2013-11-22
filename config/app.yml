@@ -1,0 +1,2 @@
+all:
+  sf_guard_plugin_signin_form: gGuardFormSignin
